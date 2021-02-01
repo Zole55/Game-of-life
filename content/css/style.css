@@ -1,0 +1,98 @@
+body {
+  background-color: #eeeeee;
+}
+
+table, th, td {
+  border: 0.5px #37636f;
+  border-style: groove;
+  border-radius: 5px;
+}
+
+table {
+  margin: auto;
+  background-color: #98d7d1;
+  border-radius: 2px;
+}
+
+td {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.l {
+  background-color: #21151b;
+}
+
+.d {
+  background-color: #da7b92;
+}
+
+.button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.components {
+  display: block;
+  margin: 30px auto 30px;
+  text-align: center;
+}
+
+.btn {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  border: 0.5px solid black;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.stop {
+  border-color: #f44336;
+  color: red;
+}
+
+.stop:hover {
+  background: #f44336;
+  color: white;
+}
+
+.start {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.start:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.next {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+.next:hover {
+  background: #2196F3;
+  color: white;
+}
+
+.open {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.open:hover {
+  background: #ff9800;
+  color: white;
+}
