@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="eng" ng-app="GOLApp">
+<meta charset="UTF-8">
+
+<head>
+  <title>Szalontai Zoltán</title>
+  <link href="content\css\style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="app\lib\angular.min.js"></script>
+  <script src="app\lib\game.js"></script>
+</head>
+
+<body>
+
+  <div ng-controller="Ctrl">
+    <h1>Game of Life:</h1>
+    <div>
+      <p>Leírás</p>
+      <p>A tábla 41x41-es méretű, így ha olyan filet töltünk
+        be ami nagyobb koordinátájú formákkal rendelkezik, mint az adott
+        tábla akkor azon formákat figyelmen kivűl hagyja és csak azokat tölti be
+        amik a tábla méretére megfelelőek.
+        A Minta betöltése alatti "Fájl kiválasztása" gombbal tudunk mintát betölteni, ezután elkezdhetjük a játékot,
+        ha új játékot akarunk kezdeni akkor azt ugyanezzel, egy új minta betöltése után tehetjük meg.
+        (A glider-compat.lif, quilt.lif, randgun.lif, track.lif fileok egyből a játék megkezdése után,
+        "Vége a játéknak" üzenetet dob mivel minden koordináta kivülre esik.)</br>
+        A "Start" gombbal tudjuk elindítani a játék automata lejátszását, ezt a "Stop" gombbal
+        tudjuk leállítani. A játékot léptetni is tudjuk a "Következő" gomb segítségével.
+        </br>A játékba új élősejteket hozhatunk létre ha belekattintunk a táblába. Ha a mezőn már
+        nincs semmi akkor jelzi a játék végét " Vége a játéknak" felirattal.
+        A generációkat a vezérlőgombok alatt számolja.
+        </br>
+        <strong>Update:</strong> Az "Előző" gomb segítségével visszatudunk térni az előző generációra.
+      </p>
+      <a href="https://github.com/Zole55/GOL" target="_blank">GIT </a>
+      <h4>Minta betöltése</h4>
+      <input class="btn open" type="file" on-read-file="showContent($content)" />
+
+      <table ng-hide="checked">
+        <tr ng-repeat='row in rows'>
+          <td ng-repeat='col in row.cols' ng-click="activate(rows.indexOf(row), $index)" ng-class="{'l':col.active == 1, 'd':col.active >1 }">
+        </tr>
+      </table>
+
+      <div class="components">
+        <button class="btn next" ng-click="eloz();"> <i class="fa fa-arrow-circle-o-left"></i> Elozo</button>
+        <button class="btn stop" ng-click="stopGame();"><i class="fa fa-stop"></i> Stop</button>
+        <button class="btn start" ng-click="startGame();"><i class="fa fa-arrow-right"></i> Start</button>
+        <button class="btn next" ng-click="next();"> <i class="fa fa-arrow-circle-o-right"></i> Következő</button>
+
+        <h3>Generáció: {{generation}}</h3>
+        <h3>{{message}}</h3>
+
+
+      </div>
+
+    </div>
+
+</body>
+
+</html>
